@@ -37,7 +37,7 @@ function TravelMap(lat,lnt,data_in,container_id,msg_id) {
         
     google.maps.event.addListener(this.marker, 'click', function() {
       
-      $("#"+msg_id).html('');
+      $("#"+msg_id).html('<span>close</span>');
       
       var buff = "";
       for (var i = this.tags.length - 1; i >= 0; i--) {
@@ -54,7 +54,8 @@ function TravelMap(lat,lnt,data_in,container_id,msg_id) {
         });
       });      
       
-      this.map.panTo(this.position);
+      //console.log(this.position);
+      //this.map.panTo(this.position);
       var markerOffset = OverLayMap.fromLatLngToDivPixel(this.position);
       $("#"+msg_id).append("<p>Nume: " + this.title + buff + "</p>").show().css({ top:markerOffset.y, left:markerOffset.x });
     });

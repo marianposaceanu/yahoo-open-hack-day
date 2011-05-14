@@ -26,7 +26,7 @@ header h1 {
   padding:10px; 
   color:#111; 
   width:150px;
-  height: 225px;
+  height: 242px;
   overflow: hidden;
   border-radius: 5px;
   
@@ -37,6 +37,19 @@ header h1 {
 
   .message a {
     padding: 0;
+    float: left;
+  }
+  
+  .message span {
+    float: right;
+    cursor: pointer;
+    margin: 0 8px 0 0; 
+  }
+  
+  .message p {
+    float: left;
+    clear: both;
+    padding: 10px;
   }
 
   .message img {;
@@ -57,9 +70,35 @@ th, td, h1, a {
   padding: 5px;
 }
 
+#show_custom_map {
+  border-radius: 5px; 
+  background-color: #CFCFCF;
+  font-size: 14px;
+  font-weight: bold;
+  color: #111;
+  padding: 10px;
+  margin-top: 10px; 
+  float:left;
+  cursor: pointer;
+  
+  background: #f9fcf7;
+  background: -moz-linear-gradient(top, #f9fcf7 0%, #f5f9f0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9fcf7), color-stop(100%,#f5f9f0));
+  background: -webkit-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+  background: -o-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+  background: -ms-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 );
+  background: linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);    
+}
+
 #places_types {
   list-style: none;
   margin: 0;
+}
+
+#places_types li a.selected {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 #places_types li a {
