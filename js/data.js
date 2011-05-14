@@ -1,3 +1,23 @@
+var place_types = [
+'museum',
+'university',
+'zoo',
+'train_station',
+'synagogue',
+'stadium',
+'park',
+'movie_theater',
+'mosque',
+'library',
+'city_hall',
+'church',
+'cemetery',
+'airport',
+'art_gallery',
+'amusement_park',
+'aquarium'
+];
+
 var data_in =  {
   "status": "OK",
   "results": [ {

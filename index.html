@@ -22,36 +22,32 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
 	<script src="js/data.js"></script>
-	<script src="js/libs/utils.js"></script>
+	<script src="js/libs/google.myoverlay.js"></script>
 	<script src="js/libs/google.maps.js"></script>
   <script src="js/application.js"></script>
 </head>
 <body>
 	<div id="container">
-    
-    <div id="tabs">
+    <div class="tabs" id="tabs">
       <ul>
          <li><a href="#tabs-1">Map</a></li>
-         <li><a href="#tabs-2">List</a></li>
-         <li><a href="#tabs-3">Filters</a></li>
+         <li><a href="#tabs-2">Filters</a></li>
       </ul>
       <div id="tabs-1">	
         <div id="map"></div>
-        <div id="message"style="display:none;">Test text.</div>        
+        <div class="message" id="message" style="display:none;">Test text.</div>
       </div>
       <div id="tabs-2">	
-        <div id="accordion">
-            <h3><a href="#">Museums</a></h3>
-            <div id="museums"></div>
-            <h3><a href="#">Hospitals</a></h3>
-            <div id="hospitals"></div>
-        </div>
-      </div>  
-      <div id="tabs-3">	
-        
-      </div>                
+        <ul id="places_types">
+        </ul>
+      </div>              
     </div>  
-	  
+    <div style="display:none;" id="dialog_map">
+      <div id="dialog_map_inside">
+        Map Goes Here  
+      </div>
+      <div class="message" id="message_dialog" style="display:none;"></div>
+    </div>
 	</div>
 </body>
 </html>

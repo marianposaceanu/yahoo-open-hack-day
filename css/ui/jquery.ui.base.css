@@ -1,14 +1,63 @@
 @import url("jquery.ui.tabs.css");
 @import url("jquery.ui.accordion.css");
+@import url("jquery.ui.dialog.css");
 /*
 @import url("jquery.ui.core.css");
 @import url("jquery.ui.resizable.css");
 @import url("jquery.ui.selectable.css");
-
 @import url("jquery.ui.autocomplete.css");
 @import url("jquery.ui.button.css");
-@import url("jquery.ui.dialog.css");
 @import url("jquery.ui.slider.css");
 @import url("jquery.ui.datepicker.css");
 @import url("jquery.ui.progressbar.css");
 */
+
+.ui-tabs-nav {
+  float: left;
+  width: 100%;
+}
+
+.ui-tabs-panel p {
+  float: left;
+  clear: both;
+  padding: 10px;
+}
+
+  .ui-tabs-panel p label {
+    margin-right: 10px;
+    width: 200px;
+    float: left;
+  }
+  
+  .ui-tabs-selected {
+    background-color: #dfdfdf;
+  }
+  
+  .ui-tabs .ui-tabs-panel {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .ui-tabs-panel p input, .ui-tabs-panel p textarea {
+    float: left;
+  }
+  
+  .ui-tabs-panel p button {
+    clear: both;
+    float: right;
+  }
+  
+  .ui-accordion-content {
+    width: 100%;
+    height: 250px;
+    background-color: #DFDFDF;
+    float: left;
+  }
+  
+  .ui-accordion-header {
+    background-color: #DFDFDF;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    float: left;  
+  }
