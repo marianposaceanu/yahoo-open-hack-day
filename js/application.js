@@ -30,22 +30,7 @@ function initialize() {
   // generates custom map
   // from types
   $('#show_custom_map').click(function(event) {
-    //console.log(select_places_types);
     event.preventDefault();
-    $("#dialog_map_inside").html("");
-    $("#dialog_map").dialog({ height: 900, width: 480, position: [0,0] });
-    if( select_places_types.length == 0 ) {
-      $("#dialog_map_inside").html("<p>Please select something !</p>");
-    } else {
-      // gen. selected stuff
-      $("#ss").remove();
-      $("#dialog_map").append("<ul id='ss'>Selected types:</ul>");
-      for (var i = select_places_types.length - 1; i >= 0; i--){
-        $("#ss").append("<li>"+select_places_types[i]+"</li>");
-      };
-      // harta
-      var map = maps.push( new TravelMap(51.7532410,-0.3546090,data_in,'dialog_map_inside','message_dialog') );          
-    }
   });
   
   // le close for mini-windows
@@ -54,9 +39,24 @@ function initialize() {
   });
 
   // le tabs
-  $("#tabs").tabs();
-  
-  
+  $("#tabs").tabs({
+    select: function(event, ui) {
+      if( ui.index == 1 ) {
+        $("#places_types").css('margin','325px 0 0');
+        $("#dialog_map_inside").html("");
+        $("#dialog_map").dialog({ width: 480
+                                , position: [0,35]
+                                , close: function(event, ui) {
+                                   $("#places_types").css('margin',0);
+                                  } 
+                                });
+        // harta
+        var map = maps.push( new TravelMap(51.7532410,-0.3546090,data_in,'dialog_map_inside','message_dialog') );
+      } else {
+        $("#dialog_map").dialog('close');
+      }
+    } 
+  });
 
 }
 

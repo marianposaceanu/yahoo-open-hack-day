@@ -92,8 +92,8 @@ th, td, h1, a {
 }
 
 #places_types {
+  margin-top: ;
   list-style: none;
-  margin: 0;
 }
 
 #places_types li a.selected {
