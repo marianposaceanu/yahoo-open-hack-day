@@ -28,20 +28,18 @@
 </head>
 <body>
 	<div id="container">
+	  <div id="header"></div>
     <div class="tabs" id="tabs">
       <ul>
-         <li><a href="#tabs-1">Map</a></li>
-         <li><a href="#tabs-2">Filters</a></li>
+         <li><a href="#tabs-1">Your current location</a></li>
       </ul>
       <div id="tabs-1">	
         <div id="map"></div>
         <div class="message" id="message" style="display:none;"><span>close</span></div>
-      </div>
-      <div id="tabs-2">	
+        <h3>What types of objective do you want to visit ?</h3>
         <ul id="places_types">
-        </ul>
-        <span id="show_custom_map">Show custom map</span>
-      </div>              
+        </ul>        
+      </div>            
     </div>  
     <div style="display:none;" id="dialog_map">
       <div id="dialog_map_inside">
