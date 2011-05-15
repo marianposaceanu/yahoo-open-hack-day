@@ -24,6 +24,16 @@ var get_photos = function(title, lat, lon, msg_id) {
   });
 } ;
 
+var markers_for_clearing = [];
+
+var clearOverlays = function() {
+  if (markers_for_clearing) {
+    for (i in markers_for_clearing) {
+      markers_for_clearing[i].setMap(null);
+    }
+  }
+}
+
 var printMarkers = function( landmarks, map, OverLayMap ) {
 	var data_in = landmarks ;
 		data_in.results = landmarks.results.splice( 0, 8 ) ;
@@ -40,6 +50,8 @@ var printMarkers = function( landmarks, map, OverLayMap ) {
 			title: name,
 			tags: le_types
 		} ) ;
+		
+		markers_for_clearing.push(marker);
          
 		(function( marker ){
 			google.maps.event.addListener(marker, 'click', function() {
@@ -113,7 +125,7 @@ function initialize() {
   
   onGetRankedLocations( data_in ) ;
   printMarkers( data_in , map, OverLayMap ) ;
-    
+      
   // make types
   var maps = [];
   for(var i = place_types.length - 1; i >= 0; i--) {
@@ -128,9 +140,15 @@ function initialize() {
     event.preventDefault();
     var buff = $(this).attr("href");
     if( !$(this).hasClass('selected') ) {
+      clearOverlays();
+      onGetRankedLocations( data_in_02 ) ;
+      printMarkers( data_in_02 , map, OverLayMap ) ;
       $(this).addClass('selected');
       select_places_types.push(buff);
     } else {
+      clearOverlays();
+      onGetRankedLocations( data_in ) ;
+      printMarkers( data_in , map, OverLayMap ) ;      
       $(this).removeClass('selected');
       select_places_types = $.map(select_places_types, function(n, i) {
         return ( n != buff ) ? n : null;
