@@ -1,0 +1,7 @@
+AuthName "tg.code5.ro statistics"
+AuthType Basic
+AuthUserFile /home/tg/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>
