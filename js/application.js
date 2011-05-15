@@ -29,8 +29,8 @@ function initialize() {
   
   // generates custom map
   // from types
-  $('#show_custom_map').click(function() {
-    console.log(select_places_types);
+  $('#show_custom_map').click(function(event) {
+    //console.log(select_places_types);
     event.preventDefault();
     $("#dialog_map_inside").html("");
     $("#dialog_map").dialog({ height: 900, width: 480, position: [0,0] });
@@ -55,6 +55,8 @@ function initialize() {
 
   // le tabs
   $("#tabs").tabs();
+  
+  
 
 }
 

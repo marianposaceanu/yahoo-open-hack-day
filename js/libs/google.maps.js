@@ -31,10 +31,7 @@ function TravelMap(lat,lnt,data_in,container_id,msg_id) {
         title: name,
         tags: le_types
     });
-    
-    //console.log("aici");
-    //console.log(this.marker);
-        
+            
     google.maps.event.addListener(this.marker, 'click', function() {
       
       $("#"+msg_id).html('<span>close</span>');
@@ -54,10 +51,22 @@ function TravelMap(lat,lnt,data_in,container_id,msg_id) {
         });
       });      
       
-      //console.log(this.position);
       //this.map.panTo(this.position);
       var markerOffset = OverLayMap.fromLatLngToDivPixel(this.position);
       $("#"+msg_id).append("<p>Nume: " + this.title + buff + "</p>").show().css({ top:markerOffset.y, left:markerOffset.x });
+      
+      //this.map.panTo(this.position);
+      //$("#"+msg_id).hide(); 
+      //var marker = this;
+      //console.log("test");
+      ////var moveEnd = google.maps.event.addListener(this.map,"moveend", function(){ 
+      //  console.log("test");
+      //  console.log(marker);
+      //  var markerOffset = OverLayMap.fromLatLngToDivPixel(this.map.getCenter());//marker.position); 
+      //  $("#"+msg_id).fadeIn().append("<p>Nume: " + this.title + buff + "</p>").css({ top:markerOffset.y, left:markerOffset.x }); 
+      ////  google.maps.event.removeListener(moveEnd); 
+      ////});
+      
     });
 
   }  
